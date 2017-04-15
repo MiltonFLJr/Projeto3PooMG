@@ -1,0 +1,24 @@
+<%@ page pageEncoding="UTF-8" %>
+
+<div>
+    
+   <!-- Footer -->
+      <footer class="footer-basic-centered">
+
+
+			<p class="footer-links">
+				
+				<a href="home.jsp">Home</a>
+				·
+				<a href="amortizacao-constante.jsp">Sistema de Amortização Constante</a>
+				·
+				<a href="amortizacao-americana.jsp">Sistema de Amortização Americano</a>
+				·
+				<a href="tabela-price.jsp">Tabela Price</a>
+			</p>
+
+
+		</footer>
+           <hr>
+            
+</div>
