@@ -28,9 +28,13 @@
  
        
                
-        double vlprincipal = 0 ; 
+        float vlprincipal = 0 ; 
         int period = 0 ;
         double taxajrs=0;
+        double taxajrsaux = taxajrs;
+        double parcel= 0 ;
+        double amorti = 0;
+        double saldodev = 0;
         
       
        
@@ -39,9 +43,7 @@
         
             try{period = Integer.parseInt(request.getParameter("periodo")); 
             taxajrs = Integer.parseInt(request.getParameter("juros")); 
-            vlprincipal = Integer.parseInt(request.getParameter("valorprincipal"));
-           
-        
+            vlprincipal = Integer.parseInt(request.getParameter("valorprincipal")); 
             }
             catch(Exception e){}
             
@@ -56,30 +58,41 @@
          <br>
             <form>
                 <p>Valor Principal:<input type="text" name="valorprincipal"></p>
-                <p>Período:<input type="text" name="periodo"><p/>
-                <p>Taxa de Juros:<input type="text" name="juros"></p>  
+                <p>Período em Meses:<input type="text" name="periodo"><p/>
+                <p>Taxa de Juros em %:<input type="text" name="juros"></p>
                 
                 <input type="submit" value="Enviar">
             </form>
-            
-             <table border="2">
+             
+         
+            <table border="2">
          <tr> <th><h4>Período</h4></th>  <th><h4>Juros</h4></th>  <th><h4>Prestação</h4></th>  <th><h4>Amortização</h4></th>  <th><h4>Saldo devedor</h4></th></tr> 
                     
+        
+         
             <!-- Repetição das celulas da tabela -->
-                    <%for(int i=1; i<= period; i++){%>
-                           <h3><tr>
+                    <%for(int i=0; i<= period; i++){%>
+                        <% if (i <= 0){ %>
+                    <h3><tr>
+                      <td><h4> <%= 0 %> </h4></td>
+                      <td><h4> <%= 0 %> </h4></td>
+                      <td><h4> <%= 0 %>  </h4></td>
+                      <td><h4> <%= 0 %></h4></td>
+                      <td><h4> <%= saldodev = vlprincipal - saldodev %> </h4></td>
+                       <% }else{ %>
+           
                       <td><h4> <%=i%> </h4></td>
+                      <td><h4> <%= taxajrsaux = ((taxajrs/100)*saldodev) %> </h4></td>
+                      <td><h4> <%= parcel = (vlprincipal)/((Math.pow((1+(taxajrs/100)),period)-1)/(Math.pow((1+(taxajrs/100)),period*1))) %>  </h4></td>
                       <td><h4> </h4></td>
                       <td><h4> </h4></td>
-                      <td><h4>  </h4></td>
-                      <td><h4>  </h4></td>
                           
-                      
-                           </tr>
+                      <% } %>
+                    </h3></tr>
                            <%}%>
-                           </table>
+            </table>
                           
-                      
+                    
         
         <br>
         <form action="home.jsp">
