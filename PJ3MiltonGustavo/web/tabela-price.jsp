@@ -22,8 +22,64 @@
         
         <%@include file="WEB-INF/jspf/nav.jspf"%>
         
+            <!-- VÁRIAVEIS -->
+          <%
+              
+ 
+       
+               
+        double vlprincipal = 0 ; 
+        int period = 0 ;
+        double taxajrs=0;
+        
+      
+       
+       
+   
+        
+            try{period = Integer.parseInt(request.getParameter("periodo")); 
+            taxajrs = Integer.parseInt(request.getParameter("juros")); 
+            vlprincipal = Integer.parseInt(request.getParameter("valorprincipal"));
+           
+        
+            }
+            catch(Exception e){}
+            
+            
+         %>
+        <!--VARIÁVEIS -->
+        
     <center>
         <h2>Tabela Price</h2>
+        
+        
+         <br>
+            <form>
+                <p>Valor Principal:<input type="text" name="valorprincipal"></p>
+                <p>Período:<input type="text" name="periodo"><p/>
+                <p>Taxa de Juros:<input type="text" name="juros"></p>  
+                
+                <input type="submit" value="Enviar">
+            </form>
+            
+             <table border="2">
+         <tr> <th><h4>Período</h4></th>  <th><h4>Juros</h4></th>  <th><h4>Prestação</h4></th>  <th><h4>Amortização</h4></th>  <th><h4>Saldo devedor</h4></th></tr> 
+                    
+            <!-- Repetição das celulas da tabela -->
+                    <%for(int i=1; i<= period; i++){%>
+                           <h3><tr>
+                      <td><h4> <%=i%> </h4></td>
+                      <td><h4> </h4></td>
+                      <td><h4> </h4></td>
+                      <td><h4>  </h4></td>
+                      <td><h4>  </h4></td>
+                          
+                      
+                           </tr>
+                           <%}%>
+                           </table>
+                          
+                      
         
         <br>
         <form action="home.jsp">
