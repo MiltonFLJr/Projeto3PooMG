@@ -21,12 +21,12 @@
         
     </head>
     <body>
-       
+     
         <%@include file="WEB-INF/jspf/nav.jspf"%>
         
     <center>
         <h2>Sistema de Amortização Americano</h2>
-        
+       
         <br>
         <form action="home.jsp">
         <input type="submit" value="Voltar">

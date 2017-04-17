@@ -29,13 +29,13 @@
             <div class="col-lg-12">
                 <center>
         
-				<p><h2>Projeto 03</h2></p>
+                    <p><h2><b>Projeto 03</b></h2></p>
 					<br>
-					<p><h2>Disciplina: Programação orientada a objetos</p></h2> 
+                                        <p><h2><b>Disciplina:</b> Programação orientada a objetos</p></h2> 
 					<br>
-					<p><h2>Docente: Ricardo pupo larguesa</h2></p>
+					<p><h2><b>Docente:</b> Ricardo pupo larguesa</h2></p>
 					<br>
-				     <h2><p>Integrantes:</p></h2>
+                                        <h2><p><b>Integrantes:</b></p></h2>
 					 <br>
 					 <h2><p>Milton Junior</p></h2>
 					 <br>
