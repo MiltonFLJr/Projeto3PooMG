@@ -28,24 +28,23 @@
  
        
                
-        float vlprincipal = 0 ; 
+        double vlprincipal = 0 ; 
         int period = 0 ;
         double taxajrs=0;
-        double taxajrsaux = taxajrs;
+        double taxajrsaux = 0;
         double parcel= 0 ;
         double amorti = 0;
         double saldodev = 0;
-        
+        float teste = 0;
       
        
-       
-   
         
             try{period = Integer.parseInt(request.getParameter("periodo")); 
-            taxajrs = Integer.parseInt(request.getParameter("juros")); 
-            vlprincipal = Integer.parseInt(request.getParameter("valorprincipal")); 
+                taxajrs = Integer.parseInt(request.getParameter("juros")); 
+                vlprincipal = Integer.parseInt(request.getParameter("valorprincipal")); 
             }
             catch(Exception e){}
+            
             
             
          %>
@@ -78,20 +77,21 @@
                       <td><h4> <%= 0 %> </h4></td>
                       <td><h4> <%= 0 %>  </h4></td>
                       <td><h4> <%= 0 %></h4></td>
-                      <td><h4> <%= saldodev = vlprincipal - saldodev %> </h4></td>
+                      <td><h4> <%= saldodev = vlprincipal %> </h4></td>
                        <% }else{ %>
            
                       <td><h4> <%=i%> </h4></td>
                       <td><h4> <%= taxajrsaux = ((taxajrs/100)*saldodev) %> </h4></td>
                       <td><h4> <%= parcel = (vlprincipal)/((Math.pow((1+(taxajrs/100)),period)-1)/(Math.pow((1+(taxajrs/100)),period*1))) %>  </h4></td>
-                      <td><h4> </h4></td>
-                      <td><h4> </h4></td>
+                      <td><h4> <%= amorti = (-1 *(vlprincipal - parcel))%> </h4></td>
+                      <td><h4> <%= saldodev = saldodev - amorti %> </h4></td>
                           
                       <% } %>
                     </h3></tr>
                            <%}%>
             </table>
-                          
+                    
+                    
                     
         
         <br>
