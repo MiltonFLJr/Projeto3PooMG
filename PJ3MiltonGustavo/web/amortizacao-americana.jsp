@@ -33,6 +33,10 @@
         double vlprincipal = 0 ; 
         int period = 0 ;
         double taxajrs=0;
+        double taxajrsaux = 0;
+        double prestacao = 0;
+        double jurosaux = 0;
+        double juros = 0;
         
       
        
@@ -63,22 +67,36 @@
         
                  <table border="2">
     
-                <tr> <th><h4>Nº Prestação</h4></th>  <th><h4>Amortização</h4></th>  <th><h4>Juros</h4></th>  <th><h4>Dívida</h4></th> </tr> 
+                <tr> <th><h4>Nº Prestação</h4></th>  <th><h4>Saldo</h4></th>  <th><h4>Amortização</h4></th>  <th><h4>Juros</h4></th>  <th><h4>Prestação</h4></th> </tr> 
                     
             <!-- Repetição das celulas da tabela -->
                     <%for(int i=1; i<= period; i++){%>
                            <h3><tr>
+                    <% if (i < period){ %>
                       <td><h4> <%=i%> </h4></td>
-                      <td><h4>  </h4></td>
-                      <td><h4>  </h4></td>
-                      <td><h4>  </h4></td>
-                      <td><h4> </h4></td>
+                      <td><h4> <%= vlprincipal %> </h4></td>
+                      <td><h4> <%= 0 %> </h4></td>
+                      <td><h4> <%= taxajrsaux = (vlprincipal * (taxajrs/100)) %> </h4></td>
+                      <td><h4> <%= prestacao = (vlprincipal * (taxajrs/100)) %> </h4></td>
                           
-                     
-                           </tr>
-                           <%}%>
+                    <% } else { %>                     
+ 
+                      <td><h4> <%= i %> </h4></td>
+                      <td><h4>  ---  </h4></td>
+                      <td><h4> <%= vlprincipal %> </h4></td>
+                      <td><h4> <%= taxajrsaux = (vlprincipal * (taxajrs/100)) %> </h4></td>
+                      <td><h4> <%= vlprincipal + taxajrsaux %> </h4></td>                    
+                    
+                    <%}%>
+                    <%}%>
+                    </tr>
                  </table>
-                           
+
+                           <h4>Relatório</h4> 
+                           <h4>Amortização : <%= vlprincipal %></h4>
+                           <h4>Total Juros : <%= juros = taxajrsaux * period %> </h4>
+                           <h4>Prestação : <%= vlprincipal + juros %> </h4>                 
+                 
         <br>
         <form action="home.jsp">
         <input type="submit" value="Voltar">
