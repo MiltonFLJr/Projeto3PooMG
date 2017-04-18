@@ -48,7 +48,7 @@
 				<div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><a href="amortizacao-constante.html">Sistema de Amortização Constante</a></h4>
+                        <h4><a href="amortizacao-constante.jsp">Sistema de Amortização Constante</a></h4>
                     </div>
                     <div class="panel-body">
                         <p>O Sistema de Amortização Constante (SAC) é uma forma de amortização de um empréstimo por prestações que incluem os juros, amortizando assim partes iguais do valor total do empréstimo.</p>
@@ -58,7 +58,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><a href="amortizacao-americana.html">Sistema de Amortização Americano</a></h4>
+                        <h4><a href="amortizacao-americana.jsp">Sistema de Amortização Americano</a></h4>
                     </div>
                     <div class="panel-body">
                         <p>O Sistema de Amortização Americano é uma forma de pagamento de empréstimos que se caracteriza pelo pagamento apenas dos juros da dívida,deixando o valor da dívida constante, que pode ser paga em apenas um único pagamento.</p>
@@ -69,7 +69,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h4><a href="tabela-price.html">Tabela Price</a></h4>
+                      <h4><a href="tabela-price.jsp">Tabela Price</a></h4>
                     </div>
                     <div class="panel-body">
                         <p>Tabela Price, também chamado de sistema francês de amortização, é um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais.</p>
