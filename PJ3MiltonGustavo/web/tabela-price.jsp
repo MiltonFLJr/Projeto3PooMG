@@ -71,7 +71,7 @@
          <br>
             <form>
                 <p>Valor Principal:<input type="text" name="valorprincipal"></p>
-                <p>Parcelas:<input type="text" name="periodo"><p/>
+                <p>Parcelas em meses:<input type="text" name="periodo"><p/>
                 <p>Taxa de Juros em %:<input type="text" name="juros"></p>  
                 
                 <input type="submit" value="Enviar">
@@ -90,20 +90,20 @@
             
                    <%for(int i=1; i<= parcelas; i++){%>
               
-                    <%  txjrsdivcem1 = txjrs/100;
-                  txjrsdivcem2 = 1 + txjrsdivcem1;
-                  prestacaoaux = Math.pow(txjrsdivcem2, parcelas);        
-                 prestacao = vlp * (prestacaoaux * txjrsdivcem1)/(prestacaoaux - 1);
-                 jurosperiodo = saldodevedor * txjrsdivcem1 ;
-                 amortizacao = prestacao - jurosperiodo;
-                 saldodevedor = saldodevedor - amortizacao;
+                <%  txjrsdivcem1 = txjrs/100;
+                txjrsdivcem2 = 1 + txjrsdivcem1;
+                prestacaoaux = Math.pow(txjrsdivcem2, parcelas);        
+                prestacao = vlp * (prestacaoaux * txjrsdivcem1)/(prestacaoaux - 1);
+                jurosperiodo = saldodevedor * txjrsdivcem1 ;
+                amortizacao = prestacao - jurosperiodo;
+                saldodevedor = saldodevedor - amortizacao;
                  
-   totalprestacao = totalprestacao + prestacao;    
-              totaljuros = totaljuros + jurosperiodo;
-              totalamortizacao = totalamortizacao + amortizacao;
-              totalsaldodevedor = totalsaldodevedor + saldodevedor;
+                totalprestacao = totalprestacao + prestacao;    
+                totaljuros = totaljuros + jurosperiodo;
+                totalamortizacao = totalamortizacao + amortizacao;
+                totalsaldodevedor = totalsaldodevedor + saldodevedor;
                  
-                                %>
+                %>
            
                        <tr>
                       <td><h4> <%= i %> </h4></td>
@@ -118,13 +118,10 @@
                 <%}%>
            </table>
                     
-                    <h4>Total</h4>
-                          <h4>Prestação:</h4> 
-                          <h4><%=df.format(totalprestacao)%></h4>
-                          <h4>Juros:</h4>
-                          <h4><%=df.format(totaljuros)%></h4>
-                          <h4>Amortização:</h4>
-                          <h4><%=df.format(totalamortizacao)%></h4>
+                          <h4>Total</h4>
+                          <h4>Prestação: <%=df.format(totalprestacao)%></h4>
+                          <h4>Juros: <%=df.format(totaljuros)%></h4>
+                          <h4>Amortização: <%=df.format(totalamortizacao)%></h4>
                     
         
         <br>

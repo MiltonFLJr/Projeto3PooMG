@@ -64,8 +64,8 @@
        
          <form>
                 <p>Valor Principal:<input type="text" name="valorprincipal"></p>
-                <p>Período:<input type="text" name="periodo"><p/>
-                <p>Taxa de Juros:<input type="text" name="juros"></p>  
+                <p>Período em meses:<input type="text" name="periodo"><p/>
+                <p>Taxa de Juros em %:<input type="text" name="juros"></p>  
                 
                 <input type="submit" value="Enviar">
                 </form>
@@ -105,7 +105,7 @@
                     <%juros = taxajrsaux * period;
                     valorprincipalmaisjuros = vlprincipal + juros;
                          %>
-                           <h4>Relatório</h4> 
+                           <h4>Total</h4> 
                            <h4>Amortização : <%= df.format(vlprincipal) %></h4>
                            <h4>Total Juros : <%= df.format(juros) %> </h4>
                            <h4>Prestação : <%= df.format(valorprincipalmaisjuros) %> </h4>                 
