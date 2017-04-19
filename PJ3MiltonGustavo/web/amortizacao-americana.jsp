@@ -68,6 +68,9 @@
                 <p>Taxa de Juros:<input type="text" name="juros"></p>  
                 
                 <input type="submit" value="Enviar">
+                </form>
+                
+                <br>
         
                  <table border="3">
     
@@ -110,6 +113,8 @@
         <br>
         <form action="home.jsp">
         <input type="submit" value="Voltar">
+        
+         </form>
         
         <%@include file="WEB-INF/jspf/foot.jspf"%>
     </body>
